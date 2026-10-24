@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Weather App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mood="cloud">
+<main class="app">
+  <header class="top">
+    <form id="form" class="search" role="search">
+      <label class="sr" for="q">City</label>
+      <input id="q" type="search" placeholder="Search for a city" autocomplete="off" required>
+      <button class="go" type="submit">Search</button>
+      <button class="pin" type="button" id="loc" aria-label="Use my location" title="Use my location">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      </button>
+    </form>
+    <div class="units" role="group" aria-label="Temperature unit">
+      <button data-u="c">°C</button><button data-u="f">°F</button>
+    </div>
+  </header>
+
+  <div class="extra" id="extra" hidden><span>Other matches:</span><ul id="choices"></ul></div>
+  <p class="status" id="status" role="status">Loading weather…</p>
+
+  <section class="now" id="now" hidden>
+    <h1 id="place"></h1>
+    <p class="sub" id="sub"></p>
+    <p class="sub" id="when"></p>
+    <div class="temprow"><span class="wxicon" id="icon"></span><span class="temp" id="temp"></span></div>
+    <p class="desc" id="desc"></p>
+    <p class="hilo" id="hilo"></p>
+    <dl class="facts">
+      <div><dt>Feels like</dt><dd id="feels"></dd></div>
+      <div><dt>Humidity</dt><dd id="hum"></dd></div>
+      <div><dt>Wind</dt><dd id="wind"></dd></div>
+      <div><dt>Rain chance</dt><dd id="rain"></dd></div>
+      <div><dt>Sunrise</dt><dd id="rise"></dd></div>
+      <div><dt>Sunset</dt><dd id="set"></dd></div>
+    </dl>
+  </section>
+
+  <section class="week" id="week" hidden>
+    <h2>Next 7 days</h2>
+    <ul id="days"></ul>
+  </section>
+
+  <footer class="foot">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
